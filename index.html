@@ -1,116 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ - Ladies Take the Ocoee</title>
-  <style>
-    /* Body and font */
-    body {
-      font-family: "Montserrat", Arial, sans-serif;
-      line-height: 1.6;
-      background: transparent; /* transparent background */
-      color: #0e1318;
-      margin: 0;
-      padding: 40px 20px;
-    }
+<meta charset="UTF-8">
+<title>FAQ - Flying Fox</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: transparent;
+    color: #0e1318;
+  }
 
-    /* Page header */
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.2rem;
-      color: #8b3dff; /* purple brand color */
-    }
+  h2 {
+    text-align: center;
+    color: #8b3dff;
+    margin-bottom: 30px;
+  }
 
-    /* FAQ container */
-    .faq {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+  .faq-item {
+    border: 2px solid #8b3dff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+    overflow: hidden;
+    background: transparent;
+  }
 
-    /* FAQ items */
-    details {
-      background: rgba(255, 255, 255, 0.0); /* fully transparent card background */
-      border-radius: 12px;
-      margin-bottom: 16px;
-      padding: 18px 22px;
-      border: 2px solid #8b3dff; /* purple border */
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
-    }
+  /* Hide the checkbox */
+  .faq-item input[type="checkbox"] {
+    display: none;
+  }
 
-    details:hover {
-      border-color: #7630d7; /* darker purple on hover */
-    }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #0e1318;
+  }
 
-    /* Summary styling */
-    summary {
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      list-style: none;
-      color: #0e1318;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+  .faq-question .toggle {
+    color: #db142c;
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+  }
 
-    summary::-webkit-details-marker {
-      display: none;
-    }
+  /* Rotate the toggle when checked */
+  .faq-item input[type="checkbox"]:checked + .faq-question .toggle {
+    transform: rotate(45deg);
+  }
 
-    /* Plus/minus toggle */
-    summary::after {
-      content: "+";
-      font-size: 1.3rem;
-      color: #db142c; /* accent red */
-      font-weight: bold;
-      transition: transform 0.3s ease;
-    }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    color: #394c60;
+    transition: max-height 0.3s ease;
+  }
 
-    details[open] summary::after {
-      content: "-";
-      transform: rotate(180deg);
-    }
-
-    /* FAQ content */
-    details p {
-      margin: 12px 0 0;
-      font-size: 1rem;
-      color: #394c60;
-    }
-  </style>
+  /* Show answer when checkbox is checked */
+  .faq-item input[type="checkbox"]:checked ~ .faq-answer {
+    max-height: 500px; /* adjust based on content */
+    padding: 10px 15px 15px 15px;
+  }
+</style>
 </head>
 <body>
-  <h1>Frequently Asked Questions</h1>
-  <section class="faq">
 
-    <details>
-      <summary>Is Katey not the coolest ever??</summary>
-      <p>Yes, many people believe that Katey is exceptionally fun and fashionable.</p>
-    </details>
+<h2>Frequently Asked Questions</h2>
 
-    <details>
-      <summary>How much does it cost to swim across the Atlantic Ocean?</summary>
-      <p>Swimming across the Atlantic Ocean is actually free, but the mental and emotional costs of doing so might make it harder to engage in Sushi Wednesday.</p>
-    </details>
+<div class="faq-item">
+  <input type="checkbox" id="q1">
+  <label class="faq-question" for="q1">
+    What services do you provide?
+    <span class="toggle">+</span>
+  </label>
+  <div class="faq-answer">
+    We offer integrated communication and consulting solutions, including SMS marketing tools, HR support, and event communication systems.
+  </div>
+</div>
 
-    <details>
-      <summary>Is Sarah tired of writing example FAQ questions?</summary>
-      <p>She is, so she'll stop here. It's just an example.</p>
-    </details>
+<div class="faq-item">
+  <input type="checkbox" id="q2">
+  <label class="faq-question" for="q2">
+    How much does it cost to get started?
+    <span class="toggle">+</span>
+  </label>
+  <div class="faq-answer">
+    Our Essentials package starts at just $0.04 per SMS with no monthly fee. Other packages are available depending on your needs.
+  </div>
+</div>
 
-    <details>
-      <summary>Do I need technical skills to use the platform?</summary>
-      <p>No, our tools are designed for ease of use, and we provide onboarding support to make sure you’re comfortable.</p>
-    </details>
+<div class="faq-item">
+  <input type="checkbox" id="q3">
+  <label class="faq-question" for="q3">
+    Can I cancel anytime?
+    <span class="toggle">+</span>
+  </label>
+  <div class="faq-answer">
+    Yes, you can cancel or switch packages at any time with no penalty.
+  </div>
+</div>
 
-    <details>
-      <summary>Can I integrate with my existing tools?</summary>
-      <p>Yes, we support integrations with platforms like Square, Jotform, Zoho Books, Google Sheets, and more through automation tools like Zapier and Make.</p>
-    </details>
+<div class="faq-item">
+  <input type="checkbox" id="q4">
+  <label class="faq-question" for="q4">
+    Do I need technical skills to use the platform?
+    <span class="toggle">+</span>
+  </label>
+  <div class="faq-answer">
+    No, our tools are designed for ease of use, and we provide onboarding support to make sure you’re comfortable.
+  </div>
+</div>
 
-  </section>
+<div class="faq-item">
+  <input type="checkbox" id="q5">
+  <label class="faq-question" for="q5">
+    Can I integrate with my existing tools?
+    <span class="toggle">+</span>
+  </label>
+  <div class="faq-answer">
+    Yes, we support integrations with platforms like Square, Jotform, Zoho Books, Google Sheets, and more through automation tools like Zapier and Make.
+  </div>
+</div>
+
 </body>
 </html>
