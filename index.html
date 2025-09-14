@@ -6,18 +6,19 @@
   <title>FAQ - Ladies Take the Ocoee</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Montserrat", Arial, sans-serif;
       line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
+      background: #fff;
+      color: #0e1318;
       margin: 0;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 30px;
-      color: #222;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+      color: #8b3dff; /* purple brand color */
     }
 
     .faq {
@@ -26,35 +27,84 @@
     }
 
     details {
-      background: #fff;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      padding: 15px 20px;
-      border: 1px solid #ddd;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      background: #f9f9ff;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      padding: 18px 22px;
+      border: 2px solid #8b3dff; /* purple border */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
       transition: all 0.3s ease;
     }
 
     details:hover {
-      border-color: #aaa;
+      border-color: #7630d7; /* darker purple on hover */
     }
 
     summary {
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 1.1rem;
       cursor: pointer;
       list-style: none;
+      color: #0e1318;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     summary::-webkit-details-marker {
       display: none;
     }
 
-    /* Add a little plus/minus effect */
-    summary::before {
+    /* plus/minus toggle */
+    summary::after {
       content: "+";
-      margin-right: 8px;
+      font-size: 1.3rem;
+      color: #db142c; /* accent red */
       font-weight: bold;
-      color: #ff6600;
+      transition: transform 0.3s ease;
     }
 
-    details[open] summary::before {
+    details[open] summary::after {
+      content: "-";
+      transform: rotate(180deg);
+    }
+
+    details p {
+      margin: 12px 0 0;
+      font-size: 1rem;
+      color: #394c60;
+    }
+  </style>
+</head>
+<body>
+  <h1>Frequently Asked Questions</h1>
+  <section class="faq">
+
+    <details>
+      <summary>What services do you provide?</summary>
+      <p>We offer integrated communication and consulting solutions, including SMS marketing tools, HR support, and event communication systems.</p>
+    </details>
+
+    <details>
+      <summary>How much does it cost to get started?</summary>
+      <p>Our Essentials package starts at just $0.04 per SMS with no monthly fee. Other packages are available depending on your needs.</p>
+    </details>
+
+    <details>
+      <summary>Can I cancel anytime?</summary>
+      <p>Yes, you can cancel or switch packages at any time with no penalty.</p>
+    </details>
+
+    <details>
+      <summary>Do I need technical skills to use the platform?</summary>
+      <p>No, our tools are designed for ease of use, and we provide onboarding support to make sure you’re comfortable.</p>
+    </details>
+
+    <details>
+      <summary>Can I integrate with my existing tools?</summary>
+      <p>Yes, we support integrations with platforms like Square, Jotform, Zoho Books, Google Sheets, and more through automation tools like Zapier and Make.</p>
+    </details>
+
+  </section>
+</body>
+</html>
